@@ -155,11 +155,25 @@ docker exec -it php /bin/bash
 ```shell
 vendor/bin/drush theme:enable gin
 ```
+
+> Set gin as default theme (at the root of the project "/app")
+
+```shell
+vendor/bin/drush cset system.theme default gin
+Do you want to update default key in system.theme config? (yes/no) [yes]: (ENTER)
+```
+
 > Enable modules admin_toolbar, gin_toolbar (at the root of the project "/app") 
 
 ```shell
 vendor/bin/drush en admin_toolbar gin_toolbar
 ```
+
+> Gin configurations 
+- http://localhost:8080/admin/appearance/settings/gin
+
+![image](https://user-images.githubusercontent.com/25177878/181593484-3c966118-dae4-4c75-9a0c-0299596f1ac0.png)
+
 
 
 ![image](https://user-images.githubusercontent.com/25177878/181411963-0aad27e4-81d0-49f3-9cba-28670e6653ce.png)
