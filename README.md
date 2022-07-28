@@ -7,7 +7,7 @@ Fresh installation of Drupal (PHP 8, APACHE, MYSL, PHPMYADMIN, DRUPAL 9.4, drupa
 
 - Git
 - WSL
-- Composer
+- Composer (globally installed)
 - Docker-desktop
 
 [Documentation docker desktop](https://docs.docker.com/desktop/install/windows-install/)
@@ -15,6 +15,7 @@ Fresh installation of Drupal (PHP 8, APACHE, MYSL, PHPMYADMIN, DRUPAL 9.4, drupa
 > Linux 
 
 - Git
+- Composer (globally installed)
 - Docker 
 - Docker-compose
 
