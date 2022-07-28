@@ -162,6 +162,12 @@ vendor/bin/drush theme:enable gin
 vendor/bin/drush cset system.theme default gin
 Do you want to update default key in system.theme config? (yes/no) [yes]: (ENTER)
 ```
+> Set gin as admin theme (at the root of the project "/app")
+
+```shell
+vendor/bin/drush cset system.theme admin gin
+Do you want to update default key in system.theme config? (yes/no) [yes]: (ENTER)
+```
 
 > Enable modules admin_toolbar, gin_toolbar (at the root of the project "/app") 
 
