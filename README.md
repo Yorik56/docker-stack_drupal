@@ -13,7 +13,7 @@ Fresh installation of Drupal (PHP 8, APACHE, MYSL, PHPMYADMIN, DRUPAL 9.4, drupa
 - mysql:latest
 - phpmyadmin/phpmyadmin:latest
 
-> /docker-compose.yml
+> [https://github.com/Yorik56/docker-stack_drupal/blob/main/docker-compose.yml](/docker-compose.yml)
 
 ```yaml
 version: '3.8'
@@ -50,7 +50,7 @@ services:
       - 8081:80
 ```
 
-> /Dockerfile
+> [https://github.com/Yorik56/docker-stack_drupal/blob/main/Dockerfile](/Dockerfile)
 
 ```yaml
 # Dockerfile
