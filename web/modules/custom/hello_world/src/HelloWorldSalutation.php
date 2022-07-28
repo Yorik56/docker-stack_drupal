@@ -2,6 +2,7 @@
 
 namespace Drupal\hello_world;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
@@ -11,20 +12,41 @@ class HelloWorldSalutation {
 	use StringTranslationTrait;
 
 	/**
+	 * @var ConfigFactoryInterface
+	 */
+	protected $configFactory;
+
+	/**
+	 * HelloWorldSalutation constructor.
+	 *
+	 * @param ConfigFactoryInterface $configFactory
+	 */
+	public function __construct(ConfigFactoryInterface $configFactory) {
+		$this->configFactory = $configFactory;
+	}
+
+	/**
 	 * Returns the salutation
 	 */
 	public function getSalutation() {
-			$time = new \DateTime();
-			if((int) $time->format('G') >= 00 && (int) $time->format('G') < 12) {
-				return $this->t('Good morning world');
-			}
+		$config = $this->configFactory->get('hello_world.custom_salutation');
+		$salutation = $config->get('salutation');
 
-			if((int) $time->format('G') >= 12 && (int) $time->format('G') < 18) {
-				return $this->t('Good afternoon world');
-			}
+		if($salutation !== '' && $salutation) {
+			return $salutation;
+		}
 
-			if((int) $time->format('G') >= 18 && (int) $time->format('G') < 24) {
-				return $this->t('Good evening world');
-			}
+		$time = new \DateTime();
+		if((int) $time->format('G') >= 00 && (int) $time->format('G') < 12) {
+			return $this->t('Good morning world');
+		}
+
+		if((int) $time->format('G') >= 12 && (int) $time->format('G') < 18) {
+			return $this->t('Good afternoon world');
+		}
+
+		if((int) $time->format('G') >= 18 && (int) $time->format('G') < 24) {
+			return $this->t('Good evening world');
+		}
 	}
 }
