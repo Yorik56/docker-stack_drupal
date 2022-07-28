@@ -122,17 +122,17 @@ RUN a2enmod rewrite remoteip && \
 git clone https://github.com/Yorik56/docker-stack_drupal project_name
 ```
 
-> Installation of the dependencies
+> Installation of the dependencies (at the root of your project)
 ```shell
 composer install
 ```
 
-> Installation of the docker stack
+> Installation of the docker stack (at the root of your project)
 ```shell
 docker-compose up --build
 ```
 
-> Lauch the website 
+> Lauch the website (first wait for the end of the docker stack installation)
 http://localhost:8080
 
 > Configuration of the database (the parameters are located in the [docker-compose](https://github.com/Yorik56/docker-stack_drupal/blob/main/docker-compose.yml) file)
