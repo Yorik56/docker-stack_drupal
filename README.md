@@ -5,6 +5,7 @@ Fresh installation of Drupal (PHP 8, APACHE, MYSL, PHPMYADMIN, DRUPAL 9.4, drupa
 
 > Windows
 
+- Git
 - WSL
 - Composer
 - Docker-desktop
@@ -13,6 +14,7 @@ Fresh installation of Drupal (PHP 8, APACHE, MYSL, PHPMYADMIN, DRUPAL 9.4, drupa
 
 > Linux 
 
+- Git
 - Docker 
 - Docker-compose
 
@@ -23,6 +25,11 @@ Fresh installation of Drupal (PHP 8, APACHE, MYSL, PHPMYADMIN, DRUPAL 9.4, drupa
 
 
 # Installation 
+
+> Clone this repo at the root of your project
+```shell
+git clone https://github.com/Yorik56/docker-stack_drupal
+```
 
 > Installation of the dependencies
 ```shell
