@@ -27,8 +27,8 @@ COPY php/conf/php.ini /usr/local/etc/php/conf.d/app.ini
 COPY php/conf/vhost.conf /etc/apache2/sites-available/000-default.conf
 COPY php/conf/apache.conf /etc/apache2/conf-available/z-app.conf
 COPY . /app
-RUN chmod 777 /app/web/sites/default/files/
-RUN chmod 666 /app/web/sites/default/settings.php
+RUN chmod 770 /app/web/sites/default/files/
+RUN chmod 660 /app/web/sites/default/settings.php
 
 RUN a2enmod rewrite remoteip && \
     a2enconf z-app
