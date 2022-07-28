@@ -135,7 +135,7 @@ docker-compose up --build
 > Lauch the website 
 http://localhost:8080
 
-> Configuration of the database (the parameters are located in the docker-compose file)
+> Configuration of the database (the parameters are located in the [docker-compose](https://github.com/Yorik56/docker-stack_drupal/blob/main/docker-compose.yml) file)
 - host database: mysql
 - database user: root
 - database name: drupal
