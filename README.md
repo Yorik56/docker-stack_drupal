@@ -13,6 +13,43 @@ Fresh installation of Drupal (PHP 8, APACHE, MYSL, PHPMYADMIN, DRUPAL 9.4, drupa
 - mysql:latest
 - phpmyadmin/phpmyadmin:latest
 
+> docker-compose.yml
+
+```docker-composer
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: php
+    build: .
+    volumes:
+      - ./:/app
+    ports:
+      - 8080:80
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: drupal
+      MYSQL_DATABASE: drupal
+    ports:
+      - "6033:3306"
+    volumes:
+      - ./dbdata:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:80
+```
+
 # Prerequisite
 
 > Windows
