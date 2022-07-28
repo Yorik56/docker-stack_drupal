@@ -142,4 +142,13 @@ http://localhost:8080
 - database password: drupal 
 - database port listening: 3306
 
+# Extensions & Themes installation
+
+> Launch the PHP container 
+
+```shell
+docker exec -it php /bin/bash
+```
+
+
 ![image](https://user-images.githubusercontent.com/25177878/181411963-0aad27e4-81d0-49f3-9cba-28670e6653ce.png)
