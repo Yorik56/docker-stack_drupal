@@ -117,9 +117,9 @@ RUN a2enmod rewrite remoteip && \
 
 # Installation 
 
-> Clone this repo at the root of your project
+> Clone this directory which will be the root of your project
 ```shell
-git clone https://github.com/Yorik56/docker-stack_drupal
+git clone https://github.com/Yorik56/docker-stack_drupal project_name
 ```
 
 > Installation of the dependencies
