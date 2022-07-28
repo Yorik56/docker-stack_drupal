@@ -52,7 +52,7 @@ services:
 
 > [/Dockerfile](https://github.com/Yorik56/docker-stack_drupal/blob/main/Dockerfile)
 
-```yaml
+```dockerfile
 # Dockerfile
 FROM php:8.0-apache
 
