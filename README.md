@@ -96,7 +96,7 @@ RUN a2enmod rewrite remoteip && \
 > Windows
 
 - Git
-- WSL
+- WSL2
 - Composer (globally installed)
 - Docker-desktop
 
