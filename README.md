@@ -150,5 +150,16 @@ http://localhost:8080
 docker exec -it php /bin/bash
 ```
 
+> Enable theme gin (at the root of the project "/app") 
+
+```shell
+vendor/bin/drush theme:enable gin
+```
+> Enable modules admin_toolbar, gin_toolbar (at the root of the project "/app") 
+
+```shell
+vendor/bin/drush en admin_toolbar gin_toolbar
+```
+
 
 ![image](https://user-images.githubusercontent.com/25177878/181411963-0aad27e4-81d0-49f3-9cba-28670e6653ce.png)
