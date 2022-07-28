@@ -1,7 +1,7 @@
 # docker-stack_drupal
 Fresh installation of Drupal (PHP 8, APACHE, MYSL, PHPMYADMIN, DRUPAL 9.4, drupal/gin THEME)
 
-# prerequisite
+# Prerequisite
 
 > Windows
 
