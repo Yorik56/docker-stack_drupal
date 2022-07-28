@@ -166,7 +166,7 @@ Do you want to update default key in system.theme config? (yes/no) [yes]: (ENTER
 > Enable modules admin_toolbar, gin_toolbar (at the root of the project "/app") 
 
 ```shell
-vendor/bin/drush en admin_toolbar gin_toolbar
+vendor/bin/drush en admin_toolbar admin_toolbar_tools gin_toolbar
 ```
 
 > Gin configurations 
