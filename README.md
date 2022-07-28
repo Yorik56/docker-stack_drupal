@@ -1,6 +1,27 @@
 # docker-stack_drupal
 Fresh installation of Drupal (PHP 8, APACHE, MYSL, PHPMYADMIN, DRUPAL 9.4, drupal/gin THEME)
 
+# prerequisite
+
+> Windows
+
+- WSL
+- Composer
+- Docker-desktop
+
+[Documentation docker desktop](https://docs.docker.com/desktop/install/windows-install/)
+
+> Linux 
+
+- Docker 
+- Docker-compose
+
+[Documentation docker](https://docs.docker.com/desktop/install/linux-install/)
+[Documentation docker compose](https://docs.docker.com/compose/install/compose-plugin/#install-using-the-repository)
+
+
+
+
 # Installation 
 
 > Installation of the dependencies
