@@ -31,5 +31,7 @@ RUN chmod 770 /app/web/sites/default/files/
 RUN chmod 660 /app/web/sites/default/settings.php
 
 RUN a2enmod rewrite remoteip && \
-    a2enconf z-app
+    a2enconf z-app \
+
+RUN composer install
 
