@@ -1,19 +1,20 @@
 <?php
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\hello_world\HelloWorldSalutation;
 use JetBrains\PhpStorm\ArrayShape;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
-	 * Hello World salutation block.
-	 *
-	 * @Block(
-	 *     id = "hello_world_salutation_block",
-	 *     admin_label = @Translation("Hello World salutation"),
-	 *  )
-	 */
+ * Hello World salutation block.
+ *
+ * @Block(
+ *     id = "hello_world_salutation_block",
+ *     admin_label = @Translation("Hello World salutation"),
+ *  )
+ */
 class HelloWorldSalutationBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
 	/**
@@ -49,6 +50,40 @@ class HelloWorldSalutationBlock extends BlockBase implements ContainerFactoryPlu
 		return [
 			'#markup' => $this->salutation->getSalutation()
 		];
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	#[ArrayShape(['enabled' => "int"])] public function defaultConfiguration(): array {
+		return [
+			'enabled' => 1,
+		];
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function blockForm($form, FormStateInterface $form_state): array
+	{
+		$config = $this->getConfiguration();
+
+		$form['enabled'] = [
+			'#type' => 'checkbox',
+			'#title' => $this->t('Enabled'),
+			'#description' => $this->t('Check this box if you want to enable this feature.'),
+			'#default_value' => $config['enabled'],
+		];
+
+		return $form;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function blockSubmit($form, FormStateInterface $form_state): void
+	{
+		$this->configuration['enabled'] = $form_state->getValue('enabled');
 	}
 }
 
