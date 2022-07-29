@@ -4,6 +4,7 @@ namespace Drupal\hello_world;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Prepares the salutation to the world.
@@ -14,15 +15,22 @@ class HelloWorldSalutation {
 	/**
 	 * @var ConfigFactoryInterface
 	 */
-	protected $configFactory;
+	protected ConfigFactoryInterface $configFactory;
+
+	/**
+	 * @var EventDispatcherInterface
+	 */
+	protected EventDispatcherInterface $eventDispatcher;
 
 	/**
 	 * HelloWorldSalutation constructor.
 	 *
 	 * @param ConfigFactoryInterface $configFactory
+	 * @param EventDispatcherInterface $eventDispatcher
 	 */
-	public function __construct(ConfigFactoryInterface $configFactory) {
+	public function __construct(ConfigFactoryInterface $configFactory, EventDispatcherInterface $eventDispatcher) {
 		$this->configFactory = $configFactory;
+		$this->eventDispatcher = $eventDispatcher;
 	}
 
 	/**
@@ -33,7 +41,10 @@ class HelloWorldSalutation {
 		$salutation = $config->get('salutation');
 
 		if($salutation !== '' && $salutation) {
-			return $salutation;
+			$event = new SalutationEvent();
+			$event->setValue($salutation);
+			$event = $this->eventDispatcher->dispatch(SalutationEvent::EVENT, $event);
+			return $event->getValue();
 		}
 
 		$time = new \DateTime();
