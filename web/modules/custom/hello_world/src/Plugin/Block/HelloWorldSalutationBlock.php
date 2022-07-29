@@ -1,5 +1,7 @@
 <?php
 
+namespace Drupal\hello_world\Plugin\Block;
+
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
